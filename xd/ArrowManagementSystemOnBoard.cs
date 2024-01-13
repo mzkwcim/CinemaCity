@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class BoardHighlighter
+    class ArrowManagementSystemOnBoard
     {
         public static int[] Highlight(List<string> seatList)
         {
             int[] number = new int[] { 0, 0 };
-            ExitTheCinema.ChangeConsoleColorToBlackAndClear();
-            View.DrawBoard(seatList);
+            ExitingSystem.ChangeConsoleColorToBlackAndClear();
+            DisplaySystem.DrawBoard(seatList);
             Console.WriteLine("\nAby wrócić do menu głównego wciśnij escape");
             Console.SetCursorPosition(0, 0);
             ConsoleKey key;

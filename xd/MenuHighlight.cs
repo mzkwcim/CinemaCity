@@ -12,7 +12,7 @@ namespace CinemaCity
         {
             int number = 1;
             ConsoleKey key;
-            View.Menu(menu);
+            DisplaySystem.Menu(menu);
             Console.SetCursorPosition(0, 1);
             do
             {
@@ -20,8 +20,8 @@ namespace CinemaCity
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow: MoveCursorOnMenu.MoveUpAndColor(menu); break;
-                    case ConsoleKey.DownArrow: MoveCursorOnMenu.MoveDownAndColor(menu); break;
+                    case ConsoleKey.UpArrow: MenuTrafficControllSystem.MoveUpAndColor(menu); break;
+                    case ConsoleKey.DownArrow: MenuTrafficControllSystem.MoveDownAndColor(menu); break;
                     case ConsoleKey.Enter: number = Console.CursorTop; break;
                 }
             } while (key != ConsoleKey.Enter);

@@ -3,15 +3,15 @@
 Cinema.MainMenu();
 class Cinema
 {
-    public static string[] y = new string[4];
-    public static string[] x = new string[12];
+    internal static string[] y = new string[4];
+    internal static string[] x = new string[12];
     
     Cinema cinema = new Cinema();
     public static void MainMenu()
     {
         string[] menu = new string[] { "Menu", "Wybierz miejsce", "Sprawdź wolne miejsca", "Odwołaj rezerwacje", "Sprawdź liczbę wolnych miejsc", "Wyjdź z kina" };
         bool koniec = true;
-        List<string> seatList = Initializer.SeatListCreater();
+        List<string> seatList = ListOperator.SeatListCreater();
         while (koniec)
         {
             //dzisiaj nie dam rady już bardziej poprawić kodu, ale będę pracować nad tym o czym dzisiaj mi Pan mówił
@@ -20,10 +20,10 @@ class Cinema
             {
                 case 0: break;
                 case 1: ChairsInCinema.ReserveASeatOrRevokeAReservation("X", seatList); break;
-                case 2: View.DrawBoardHelper(seatList); break;
+                case 2: DisplaySystem.DrawBoardHelper(seatList); break;
                 case 3: ChairsInCinema.ReserveASeatOrRevokeAReservation("O", seatList); break;
                 case 4: NumberOfFreeSeats.Counter(seatList); break;
-                case 5: koniec = ExitTheCinema.ExitACinema(); break;
+                case 5: koniec = ExitingSystem.ExitACinema(); break;
             }
         }
     }
@@ -32,7 +32,7 @@ class NumberOfFreeSeats
 {
     public static void Counter(List<string> seatList)
     {
-        ExitTheCinema.ChangeConsoleColorToBlackAndClear();
+        ExitingSystem.ChangeConsoleColorToBlackAndClear();
         int adder = 0;
         for (int i = 0; i < seatList.Count; i++)
         {
@@ -43,7 +43,7 @@ class NumberOfFreeSeats
         Console.Clear();
     }
 }
-class Initializer
+class ListOperator
 {
     public static List<string> SeatListCreater()
     {

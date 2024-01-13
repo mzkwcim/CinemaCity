@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class ColorABoard
+    class BoardColoringSystem
     {
         public static void Color(int x, int y, List<string> seatList)
         {

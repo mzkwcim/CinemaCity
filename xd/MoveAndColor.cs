@@ -10,27 +10,27 @@ namespace CinemaCity
     {
         public static void MoveUpAndColor(int y, List<string> seatList)
         {
-            ColorABoard.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
-            MoveCursorOnBoard.MoveUp(y);
-            ColorABoard.Color(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardColoringSystem.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardTrafficControlSystem.MoveUp(y);
+            BoardColoringSystem.Color(Console.CursorLeft, Console.CursorTop, seatList);
         }
         public static void MoveDownAndColor(int y, List<string> seatList)
         {
-            ColorABoard.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
-            MoveCursorOnBoard.MoveDown(y);
-            ColorABoard.Color(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardColoringSystem.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardTrafficControlSystem.MoveDown(y);
+            BoardColoringSystem.Color(Console.CursorLeft, Console.CursorTop, seatList);
         }
         public static void MoveRightAndColor(int x, List<string> seatList)
         {
-            ColorABoard.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
-            MoveCursorOnBoard.MoveRight(x);
-            ColorABoard.Color(Console.CursorLeft % (x + 2), Console.CursorTop, seatList);
+            BoardColoringSystem.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardTrafficControlSystem.MoveRight(x);
+            BoardColoringSystem.Color(Console.CursorLeft % (x + 2), Console.CursorTop, seatList);
         }
         public static void MoveLeftAndColor(int x, List<string> seatList)
         {
-            ColorABoard.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
-            MoveCursorOnBoard.MoveLeft(x);
-            ColorABoard.Color(Console.CursorLeft % (x + 2), Console.CursorTop, seatList);
+            BoardColoringSystem.UnColor(Console.CursorLeft, Console.CursorTop, seatList);
+            BoardTrafficControlSystem.MoveLeft(x);
+            BoardColoringSystem.Color(Console.CursorLeft % (x + 2), Console.CursorTop, seatList);
         }
     }
 }

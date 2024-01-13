@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class ExitTheCinema
+    class ExitingSystem
     {
         public static bool ExitACinema()
         {
@@ -40,8 +40,8 @@ namespace CinemaCity
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow: MoveCursorOnMenu.MoveUpAndColor(response); break;
-                    case ConsoleKey.DownArrow: MoveCursorOnMenu.MoveDownAndColor(response); break;
+                    case ConsoleKey.UpArrow: MenuTrafficControllSystem.MoveUpAndColor(response); break;
+                    case ConsoleKey.DownArrow: MenuTrafficControllSystem.MoveDownAndColor(response); break;
                     case ConsoleKey.Enter: number = Console.CursorTop; break;
                 }
             } while (key != ConsoleKey.Enter);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class MoveCursorOnBoard
+    class BoardTrafficControlSystem
     {
         public static void MoveUp(int y) => Console.CursorTop = (Console.CursorTop - 1 < 0) ? (y - 1) : (Console.CursorTop - 1) % y;
         public static void MoveDown(int y) => Console.CursorTop = (Console.CursorTop + 1 > y) ? 0 : (Console.CursorTop + 1) % y;

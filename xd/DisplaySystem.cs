@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class View
+    class DisplaySystem
     {
         public static void Menu(string[] menu)
         {
-            ExitTheCinema.ChangeConsoleColorToBlackAndClear();
+            ExitingSystem.ChangeConsoleColorToBlackAndClear();
             for (int i = 0; i < menu.Length; i++)
             {
                 Console.WriteLine(menu[i]);
@@ -18,7 +18,7 @@ namespace CinemaCity
         }
         public static void DrawBoard(List<string> SeatList)
         {
-            ExitTheCinema.ChangeConsoleColorToBlackAndClear();
+            ExitingSystem.ChangeConsoleColorToBlackAndClear();
             for (int i = 0; i < SeatList.Count; i++)
             {
                 Console.Write((i % 4 == 3) ? (i % 12 == 11) ? SeatList[i] + "\n" : SeatList[i] + " " : SeatList[i]);
@@ -26,7 +26,7 @@ namespace CinemaCity
         }
         public static void DrawBoardHelper(List<string> seatList)
         {
-            View.DrawBoard(seatList);
+            DisplaySystem.DrawBoard(seatList);
             Console.WriteLine("\nAby wrócić do menu głównego wciśnij dowolny klawisz");
             Console.ReadKey();
         }
