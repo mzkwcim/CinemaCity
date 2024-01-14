@@ -8,19 +8,41 @@ namespace CinemaCity
 {
     class MenuTrafficControllSystem
     {
-        public static void MoveUp(string[] menu) => Console.CursorTop = (Console.CursorTop - 1 < 1) ? menu.Length - 1 : (Console.CursorTop - 1) % menu.Length;
-        public static void MoveDown(string[] menu) => Console.CursorTop = ((Console.CursorTop + 1) % menu.Length == 0) ? 1 : (Console.CursorTop + 1) % menu.Length;
-        public static void MoveUpAndColor(string[] menu)
+        public static void MoveUp(int tokenToDetectList)
         {
-            MenuHighlight.UnColor(menu);
-            MoveUp(menu);
-            MenuHighlight.Color(menu);
+            if (tokenToDetectList == 0)
+            {
+                Console.CursorTop = (Console.CursorTop - 1 < 1) ? ExitingSystem.response.Length - 1 : (Console.CursorTop - 1) % ExitingSystem.response.Length;
+            }
+            else
+            {
+                Console.CursorTop = (Console.CursorTop - 1 < 1) ? Cinema.menu.Length - 1 : (Console.CursorTop - 1) % Cinema.menu.Length;
+            }
+
         }
-        public static void MoveDownAndColor(string[] menu)
+        public static void MoveDown(int tokenToDetectList)
         {
-            MenuHighlight.UnColor(menu);
-            MoveDown(menu);
-            MenuHighlight.Color(menu);
+            if (tokenToDetectList == 0)
+            {
+                Console.CursorTop = ((Console.CursorTop + 1) % ExitingSystem.response.Length == 0) ? 1 : (Console.CursorTop + 1) % ExitingSystem.response.Length;
+            }
+            else
+            {
+                Console.CursorTop = ((Console.CursorTop + 1) % Cinema.menu.Length == 0) ? 1 : (Console.CursorTop + 1) % Cinema.menu.Length;
+            }
+            
+        }
+        public static void MoveUpAndColor(int tokenToDetectList)
+        {
+            BoardHighlightingSystem.UnColor(tokenToDetectList);
+            MoveUp(tokenToDetectList);
+            BoardHighlightingSystem.Color(tokenToDetectList);
+        }
+        public static void MoveDownAndColor(int tokenToDetectList)
+        {
+            BoardHighlightingSystem.UnColor(tokenToDetectList);
+            MoveDown(tokenToDetectList);
+            BoardHighlightingSystem.Color(tokenToDetectList);
         }
     }
 }

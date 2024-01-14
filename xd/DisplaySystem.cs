@@ -8,25 +8,25 @@ namespace CinemaCity
 {
     class DisplaySystem
     {
-        public static void Menu(string[] menu)
+        public static void Menu()
         {
             ExitingSystem.ChangeConsoleColorToBlackAndClear();
-            for (int i = 0; i < menu.Length; i++)
+            for (int i = 0; i < Cinema.menu.Length; i++)
             {
-                Console.WriteLine(menu[i]);
+                Console.WriteLine(Cinema.menu[i]);
             }
         }
-        public static void DrawBoard(List<string> SeatList)
+        public static void DrawBoard()
         {
             ExitingSystem.ChangeConsoleColorToBlackAndClear();
-            for (int i = 0; i < SeatList.Count; i++)
+            for (int i = 0; i < ListMeneger.seatList.Count; i++)
             {
-                Console.Write((i % 4 == 3) ? (i % 12 == 11) ? SeatList[i] + "\n" : SeatList[i] + " " : SeatList[i]);
+                Console.Write((i % 4 == 3) ? (i % 12 == 11) ? ListMeneger.seatList[i] + "\n" : ListMeneger.seatList[i] + " " : ListMeneger.seatList[i]);
             }
         }
-        public static void DrawBoardHelper(List<string> seatList)
+        public static void DrawBoardWithInstructions()
         {
-            DisplaySystem.DrawBoard(seatList);
+            DrawBoard();
             Console.WriteLine("\nAby wrócić do menu głównego wciśnij dowolny klawisz");
             Console.ReadKey();
         }

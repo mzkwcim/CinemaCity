@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
+    
     class ExitingSystem
     {
+        internal static string[] response = new string[] { "Czy na pewno chcesz wyjść z kina?", "Nie", "Tak" };
         public static bool ExitACinema()
         {
             ChangeConsoleColorToBlackAndClear();
@@ -31,17 +33,17 @@ namespace CinemaCity
         public static int DoYouRealyWantToExitACinema()
         {
             int number = 1;
-            string[] response = new string[] { "Czy na pewno chcesz wyjść z kina?", "Nie", "Tak" };
             Console.WriteLine($"{response[0]}\n{response[1]}\n{response[2]}");
             ConsoleKey key;
             Console.SetCursorPosition(0, 1);
+            int tokenToDetectList = 0;
             do
             {
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow: MenuTrafficControllSystem.MoveUpAndColor(response); break;
-                    case ConsoleKey.DownArrow: MenuTrafficControllSystem.MoveDownAndColor(response); break;
+                    case ConsoleKey.UpArrow: MenuTrafficControllSystem.MoveUpAndColor(tokenToDetectList); break;
+                    case ConsoleKey.DownArrow: MenuTrafficControllSystem.MoveDownAndColor(tokenToDetectList); break;
                     case ConsoleKey.Enter: number = Console.CursorTop; break;
                 }
             } while (key != ConsoleKey.Enter);

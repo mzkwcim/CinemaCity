@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CinemaCity
 {
-    class ArrowManagementSystemOnBoard
+    class ChairsHighlightingSystem
     {
-        public static int[] Highlight(List<string> seatList)
+        public static int[] HighlightACertainPlaceOnBoard()
         {
             int[] number = new int[] { 0, 0 };
             ExitingSystem.ChangeConsoleColorToBlackAndClear();
-            DisplaySystem.DrawBoard(seatList);
+            DisplaySystem.DrawBoard();
             Console.WriteLine("\nAby wrócić do menu głównego wciśnij escape");
             Console.SetCursorPosition(0, 0);
             ConsoleKey key;
@@ -21,10 +21,10 @@ namespace CinemaCity
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow: MoveAndColor.MoveUpAndColor(Cinema.y.Length, seatList); break;
-                    case ConsoleKey.DownArrow: MoveAndColor.MoveDownAndColor(Cinema.y.Length, seatList); break;
-                    case ConsoleKey.RightArrow: MoveAndColor.MoveRightAndColor(Cinema.x.Length, seatList); break;
-                    case ConsoleKey.LeftArrow: MoveAndColor.MoveLeftAndColor(Cinema.x.Length, seatList); break;
+                    case ConsoleKey.UpArrow: MoveAndColor.MoveUpAndColor(); break;
+                    case ConsoleKey.DownArrow: MoveAndColor.MoveDownAndColor(); break;
+                    case ConsoleKey.RightArrow: MoveAndColor.MoveRightAndColor(); break;
+                    case ConsoleKey.LeftArrow: MoveAndColor.MoveLeftAndColor(); break;
                     case ConsoleKey.Enter: number = new int[] { (Console.CursorLeft < 4) ? Console.CursorLeft : (Console.CursorLeft > 4 && Console.CursorLeft < 9) ? Console.CursorLeft - 1 : Console.CursorLeft - 2, Console.CursorTop }; break;
                     case ConsoleKey.Escape: number = new int[] { -1, -1 }; break;
                 }

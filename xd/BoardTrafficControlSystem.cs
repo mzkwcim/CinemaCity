@@ -8,9 +8,9 @@ namespace CinemaCity
 {
     class BoardTrafficControlSystem
     {
-        public static void MoveUp(int y) => Console.CursorTop = (Console.CursorTop - 1 < 0) ? (y - 1) : (Console.CursorTop - 1) % y;
-        public static void MoveDown(int y) => Console.CursorTop = (Console.CursorTop + 1 > y) ? 0 : (Console.CursorTop + 1) % y;
-        public static void MoveLeft(int x) => Console.CursorLeft = (Console.CursorLeft - 1 < 0) ? x + 1 : (Console.CursorLeft - 1 == 4 || Console.CursorLeft - 1 == 9) ? (Console.CursorLeft - 2) % (x + 2) : (Console.CursorLeft - 1) % (x + 2);
-        public static void MoveRight(int x) => Console.CursorLeft = (Console.CursorLeft + 1 > x + 1) ? 0 : (Console.CursorLeft + 1 == 4 || Console.CursorLeft + 1 == 9) ? (Console.CursorLeft + 2) % (x + 2) : (Console.CursorLeft + 1) % (x + 2);
+        public static void MoveUp() => Console.CursorTop = (Console.CursorTop - 1 < 0) ? (Cinema.y.Length - 1) : (Console.CursorTop - 1) % Cinema.y.Length;
+        public static void MoveDown() => Console.CursorTop = (Console.CursorTop + 1 > Cinema.y.Length) ? 0 : (Console.CursorTop + 1) % Cinema.y.Length;
+        public static void MoveLeft() => Console.CursorLeft = (Console.CursorLeft - 1 < 0) ? Cinema.x.Length + 1 : (Console.CursorLeft - 1 == 4 || Console.CursorLeft - 1 == 9) ? (Console.CursorLeft - 2) % (Cinema.x.Length + 2) : (Console.CursorLeft - 1) % (Cinema.x.Length + 2);
+        public static void MoveRight() => Console.CursorLeft = (Console.CursorLeft + 1 > Cinema.x.Length + 1) ? 0 : (Console.CursorLeft + 1 == 4 || Console.CursorLeft + 1 == 9) ? (Console.CursorLeft + 2) % (Cinema.x.Length + 2) : (Console.CursorLeft + 1) % (Cinema.x.Length + 2);
     }
 }
