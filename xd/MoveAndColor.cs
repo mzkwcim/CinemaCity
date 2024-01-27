@@ -8,29 +8,29 @@ namespace CinemaCity
 {
     class MoveAndColor
     {
-        public static void MoveUpAndColor()
+        public static void MoveUpAndColor(ListManager listManager)
         {
-            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
             BoardTrafficControlSystem.MoveUp();
-            BoardHighlightingSystem.ColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.ColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
         }
-        public static void MoveDownAndColor()
+        public static void MoveDownAndColor(ListManager listManager)
         {
-            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
             BoardTrafficControlSystem.MoveDown();
-            BoardHighlightingSystem.ColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.ColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
         }
-        public static void MoveRightAndColor()
+        public static void MoveRightAndColor(ListManager listManager)
         {
-            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
             BoardTrafficControlSystem.MoveRight();
-            BoardHighlightingSystem.ColorABoard(Console.CursorLeft % (Cinema.x.Length + 2), Console.CursorTop);
+            BoardHighlightingSystem.ColorABoard(Console.CursorLeft % (Cinema.x.Length + 2), Console.CursorTop, listManager);
         }
-        public static void MoveLeftAndColor()
+        public static void MoveLeftAndColor(ListManager listManager)
         {
-            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop);
+            BoardHighlightingSystem.UnColorABoard(Console.CursorLeft, Console.CursorTop, listManager);
             BoardTrafficControlSystem.MoveLeft();
-            BoardHighlightingSystem.ColorABoard(Console.CursorLeft % (Cinema.x.Length + 2), Console.CursorTop);
+            BoardHighlightingSystem.ColorABoard(Console.CursorLeft % (Cinema.x.Length + 2), Console.CursorTop, listManager);
         }
     }
 }

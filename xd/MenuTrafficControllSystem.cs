@@ -16,7 +16,7 @@ namespace CinemaCity
             }
             else
             {
-                Console.CursorTop = (Console.CursorTop - 1 < 1) ? Cinema.menu.Length - 1 : (Console.CursorTop - 1) % Cinema.menu.Length;
+                Console.CursorTop = (Console.CursorTop - 1 < 1) ? Cinema.menu.Count - 1 : (Console.CursorTop - 1) % Cinema.menu.Count;
             }
 
         }
@@ -28,7 +28,7 @@ namespace CinemaCity
             }
             else
             {
-                Console.CursorTop = ((Console.CursorTop + 1) % Cinema.menu.Length == 0) ? 1 : (Console.CursorTop + 1) % Cinema.menu.Length;
+                Console.CursorTop = ((Console.CursorTop + 1) % Cinema.menu.Count == 0) ? 1 : (Console.CursorTop + 1) % Cinema.menu.Count;
             }
             
         }
