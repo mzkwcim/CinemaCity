@@ -17,7 +17,6 @@ namespace CinemaCity
             int tokenToDetectList = 1;
             do
             {
-                Console.CursorVisible = false;
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {

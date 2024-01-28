@@ -6,7 +6,7 @@ Cinema.MainMenu();
 class Cinema
 {
     internal static string[] y = new string[4];
-    internal static string[] x = new string[12];
+    internal static string[] x = new string[16];
     internal static List<string> menu = new () { "Menu", "Wybierz miejsce", "Sprawdź wolne miejsca", "Odwołaj rezerwacje", "Sprawdź liczbę wolnych miejsc", "Wyjdź z kina" };
     public static void MainMenu()
     {
